@@ -1,13 +1,371 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #c5d2ec;
+  --text-color: #111827;
+  --button-light-color: #fff;
+  --button-dark-color: #c5d2ec;
+  --button-light-border-radius: 5px;
+  --button-dark-border-radius: 30px;
+  --border-color: #f1f1f1;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.header-underline {
+  background-color: var(--text-color);
+  height: 2px;
+  width: 85px;
+  margin: 5px auto;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: var(--text-color);
+}
+
+/* Header */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 20px;
+  z-index: 100;
+}
+
+.header .header-links {
+  display: flex;
+}
+
+.header .header-links ul {
+  display: flex;
+}
+
+.header .header-links .menu-icon {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.header .header-links li {
+  margin: 0 5px;
+}
+
+.header .header-links li a {
+  color: var(--text-color);
+}
+
+.header .logo {
+  text-transform: uppercase;
+}
+
+.header .search-icon {
+  display: none;
+}
+
+/* Showcase */
+.showcase {
+  position: relative;
+  border: 20px solid var(--border-color);
+  margin: 100px 20px 20px;
+  border-radius: var(--button-dark-border-radius);
+}
+
+.showcase .light-blue {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 50px;
+  background-color: hsla(220, 51%, 85%, 0.7);
+  border-top-right-radius: 10px;
+}
+
+.showcase img {
+  border-radius: 10px;
+}
+
+.showcase .title {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.showcase .title h1 {
+  color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+  display: none;
+}
+
+/* Fashion */
+.fashion {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 20px 20px 50px;
+}
+
+.social-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  background-color: var(--primary-color);
+  padding: 9px 10px 5px;
+  border-radius: 50%;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.fashion-article {
+  position: relative;
+}
+
+.fashion-article img {
+  height: 500px;
+  width: 100%;
+  transition: opacity 0.5s;
+}
+
+.fashion-article img:hover {
+  opacity: 0.5;
+}
+
+.article-description {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 10px;
+  transition: opacity 0.5s;
+}
+
+.article-description h4 {
+  font-size: 30px;
+}
+
+/* News section */
+.news-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 30px;
+  margin-top: 20px;
+  background-color: #f1f1f1;
+}
+
+.news-section img {
+  width: 100%;
+}
+
+.news-articles h4 {
+  font-size: 20px;
+}
+
+.news-articles p {
+  margin: 3px 0 10px;
+}
+
+.news-articles button {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dotted #111827;
+  padding-bottom: 2px;
+}
+
+.news-images {
+  background-color: #f1f1f1;
+}
+
+.news-images img {
+  width: 100%;
+  display: none;
+}
+
+.footer {
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.footer .logo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.footer .logo h2 {
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.footer .copyright ul {
+  display: flex;
+  margin-top: 10px;
+}
+
+.footer .copyright ul li {
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+@media (min-width: 640px) {
+  .fashion {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+
+  .article-description h4 {
+    font-size: 24px;
+  }
+
+  .news-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer .logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 992px) {
+  .fashion,
+  .news-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .news-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 30px;
+  }
+
+  .news-images img {
+    width: 100%;
+    display: block;
+    height: 450px;
+  }
+
+  .news-images article:first-child {
+    grid-column: 1/3;
+  }
+
+  .news-images article:nth-child(3) {
+    grid-column: 2/4;
+  }
+
+  .news-images article:last-child {
+    grid-row: 2/3;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    max-width: 1100px;
+    margin: auto;
+    overflow-x: hidden !important;
+  }
+
+  .header .header-links li {
+    margin: 0 10px;
+    font-size: 18px;
+  }
+
+  .header .header-links .menu-icon {
+    font-size: 24px;
+  }
+
+  .header .search-icon {
+    display: block;
+    font-size: 24px;
+    position: fixed;
+    top: 20px;
+    left: 40px;
+  }
+
+  .showcase {
+    margin: 100px;
+  }
+
+  .showcase .light-blue {
+    top: -300px;
+    right: -50%;
+    width: 700px;
+    z-index: 999;
+    padding: 300px;
+  }
+
+  .showcase .title {
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -100px;
+  }
+
+  .showcase .title h1 {
+    color: #111827;
+    font-size: 64px;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: block;
+    position: fixed;
+    left: 40px;
+    top: 100px;
+  }
+
+  .sidebar li {
+    font-size: 24px;
+  }
+
+  .fashion {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .fashion-article img {
+    height: 350px;
+  }
 }
